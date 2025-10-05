@@ -1,0 +1,259 @@
+/* ========== MOBILE OPTIMIZATION (UPDATED) ========== */
+@media (max-width: 767px) {
+
+  /* RESET */
+  body {
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* HERO SECTION */
+  .hero-bg {
+    height: 30vh;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .profile {
+    margin-top: -50px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border: 4px solid #fff;
+  }
+
+  .intro {
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  .intro h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro .desc {
+    font-size: 0.95rem;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+
+  /* BUTTONS (UPDATED SIZE) */
+  .btn-primary {
+    width: 90%;
+    max-width: 320px;
+    font-size: 1rem;
+    padding: 14px 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    font-weight: 600;
+    display: inline-block;
+    text-align: center;
+  }
+
+  /* SOCIAL ICONS (Hero) */
+  .social-icons {
+    gap: 0.8rem;
+  }
+
+  .social-icons .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  /* ========== ILLUSTRATION SECTION (UPDATED REVISED) ========== */
+  .illustration-section {
+    padding: 3.5rem 1rem; /* diberi jarak ekstra dengan About Me */
+    margin-top: 3rem;
+  }
+
+  .illustration-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem; /* jarak antar card lebih lebar */
+  }
+
+  .illustration-card {
+    width: 100%;
+    max-width: 95%;
+    background: none; /* hapus background putih */
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  /* gambar tetap di atas, teks di bawah */
+  .illustration-content {
+    display: flex;
+    flex-direction: column-reverse !important;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .illustration-content img {
+    width: 100%;
+    border-radius: 12px;
+    order: -1;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* teks rata kiri */
+  .illustration-text {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 0.8rem;
+  }
+
+  /* judul diubah jadi warna gelap dan tanpa garis */
+  .illustration-text h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.6rem;
+    position: relative;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  .illustration-text h3::after {
+    display: none;
+  }
+
+  .illustration-text p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+
+
+  /* ========== COMIC SECTION (UPDATED - sejajar) ========== */
+  .comic-section {
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+  }
+
+  .comic-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  .comic-section p {
+    font-size: 0.9rem;
+  }
+
+  .comic-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .comic-card {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: 48%;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .comic-card img {
+    width: 100%;
+    border-radius: 14px 14px 0 0;
+  }
+
+  .comic-body {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .comic-body h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    margin-bottom: 0.4rem;
+    color: #222;
+  }
+
+  .comic-body p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+  }
+
+  /* ========== FOOTER (MOBILE LEFT ALIGN, FIXED FIVERR ICON SIZE) ========== */
+footer {
+  padding: 2.5rem 1rem;
+  margin-top: 4rem;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.8rem;
+  text-align: left;
+}
+
+.footer-col {
+  width: 100%;
+  text-align: left;
+}
+
+.footer-col h4 {
+  font-size: 1rem;
+  text-align: left;
+}
+
+.footer-col p,
+.footer-col ul li {
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.footer-col ul {
+  padding-left: 0;
+  margin-left: 0;
+  text-align: left;
+}
+
+.socials {
+  justify-content: flex-start;
+  gap: 0.6rem;
+}
+
+.socials a {
+  width: 38px;
+  height: 38px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+/* ✅ Pastikan gambar Fiverr punya ukuran proporsional di mobile */
+.socials a.fiverr img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+footer p:last-child {
+  margin-top: 2rem;
+  text-align: left;
+  font-size: 0.85rem;
+}
