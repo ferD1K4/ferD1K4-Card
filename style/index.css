@@ -49,9 +49,15 @@ body {
 .social-icons .behance { background: #979797; }
 .social-icons .behance:hover { background: #0d4ecf; }
 
-/* 🔹 Tambahan: FIVERR ICON HERO */
+/* 🔹 Fiverr Icon Hero */
 .social-icons .fiverr { background: #979797; }
 .social-icons .fiverr:hover { background: #1DBF73; }
+.social-icons .fiverr img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
 
 /* ========== HERO SECTION ========== */
 .hero {
@@ -117,7 +123,7 @@ body {
   font-size: 1rem;
 }
 
-/* ========== BUTTON STYLING (UPDATE) ========== */
+/* ========== BUTTON STYLING ========== */
 .btn-primary {
   background: linear-gradient(135deg, #ff6600, #ff8533);
   color: #fff;
@@ -155,7 +161,7 @@ body {
   }
 }
 
-/* ========== ILLUSTRATION SECTION (UPDATED SPACING & TEXT) ========== */
+/* ========== ILLUSTRATION SECTION ========== */
 .illustration-section {
   padding: 6rem 1rem;
   margin-top: 4rem;
@@ -185,314 +191,4 @@ body {
 
 .illustration-content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.illustration-card.left .illustration-content {
-  flex-direction: row;
-}
-
-.illustration-card.right .illustration-content {
-  flex-direction: row-reverse;
-}
-
-.illustration-content img {
-  width: 50%;
-  border-radius: 16px;
-  object-fit: cover;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.illustration-content img:hover {
-  transform: scale(1.05);
-}
-
-.illustration-text {
-  width: 50%;
-  text-align: left;
-  padding: 1rem 1rem;
-}
-
-.illustration-text h3 {
-  font-size: 2rem;
-  font-family: 'Poppins', 'Segoe UI', sans-serif;
-  font-weight: 700;
-  color: #ff6600;
-  margin-bottom: 1rem;
-  letter-spacing: 0.8px;
-  position: relative;
-}
-
-.illustration-text h3::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background: #ff6600;
-  margin-top: 6px;
-  border-radius: 2px;
-}
-
-.illustration-text p {
-  font-size: 1.05rem;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #444;
-  line-height: 1.7;
-  margin-top: 0.8rem;
-}
-
-/* Zigzag Animations */
-.illustration-card[data-animate="left"].show {
-  animation: slideInLeft 0.8s ease forwards;
-}
-
-.illustration-card[data-animate="right"].show {
-  animation: slideInRight 0.8s ease forwards;
-}
-
-@keyframes slideInLeft {
-  from { transform: translateX(-100px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-@keyframes slideInRight {
-  from { transform: translateX(100px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-/* Responsive Illustration */
-@media (max-width: 900px) {
-  .illustration-content {
-    flex-direction: column !important;
-    text-align: center;
-  }
-
-  .illustration-text,
-  .illustration-content img {
-    width: 100%;
-  }
-
-  .illustration-text {
-    margin-top: 1rem;
-    text-align: center;
-  }
-
-  .illustration-text h3 {
-    font-size: 1.6rem;
-  }
-
-  .illustration-text h3::after {
-    margin: 8px auto 0;
-  }
-}
-
-/* ========== COMIC SECTION ========== */
-.comic-section {
-  text-align: center;
-  padding: 6rem 1rem;
-  margin-top: 4rem;
-}
-
-.comic-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.comic-section p {
-  color: #777;
-  margin-bottom: 3rem;
-}
-
-.comic-grid {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.comic-card {
-  flex: 0 1 420px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 550px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.comic-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.comic-card img {
-  width: 100%;
-  border-radius: 20px 20px 0 0;
-}
-
-.comic-body {
-  padding: 1.2rem;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.comic-body h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.comic-body p {
-  font-size: 0.9rem;
-  color: #444;
-  margin-bottom: auto;
-  flex-grow: 1;
-}
-
-.comic-body .btn-primary {
-  margin-top: 1rem;
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-/* ========== FOOTER ========== */
-footer {
-  background: #f9f9f9;
-  padding: 4rem 1.5rem 2rem;
-  margin-top: 6rem;
-  border-top: 1px solid #ddd;
-  text-align: left;
-}
-
-.footer-container {
-  display: grid;
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.footer-col {
-  text-align: left;
-}
-
-.footer-col h4 {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: #ff6600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  text-align: left;
-}
-
-.footer-col p {
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  text-align: left;
-}
-
-.footer-col ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
-}
-
-.footer-col ul li {
-  font-size: 0.9rem;
-  color: #444;
-  margin-bottom: 0.5rem;
-  text-align: left;
-}
-
-.footer-col ul li a {
-  color: #444;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  text-align: left;
-}
-
-.footer-col ul li a:hover {
-  color: #ff6600;
-}
-
-/* ========== SOCIAL ICONS FOOTER ========== */
-.socials {
-  display: flex;
-  justify-content: flex-start;
-  gap: 0.8rem;
-  margin-top: 0.5rem;
-  text-align: left;
-}
-
-.socials a {
-  font-size: 1.4rem;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #e0e0e0;
-  color: #555;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.socials a:hover {
-  transform: translateY(-3px);
-  color: #fff;
-}
-
-.socials a.instagram:hover { background: #c72c5d; }
-.socials a.webtoon:hover { background: #00b255; }
-.socials a.behance:hover { background: #0d4ecf; }
-
-/* 🔹 Tambahan: FIVERR ICON FOOTER */
-.socials a.fiverr:hover { background: #1DBF73; }
-
-/* ✅ Samakan ukuran gambar Fiverr agar proporsional dengan ikon lain */
-.socials a.fiverr img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  display: block;
-}
-
-/* Copyright text */
-footer p:last-child {
-  text-align: left;
-  margin-top: 2.5rem;
-  font-size: 0.9rem;
-  color: #777;
-  border-top: 1px solid #ddd;
-  padding-top: 1.5rem;
-}
-
-/* Responsive Footer */
-@media (min-width: 768px) {
-  .footer-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  footer {
-    text-align: left;
-  }
-  .socials {
-    justify-content: flex-start;
-  }
-}
+  align-items
