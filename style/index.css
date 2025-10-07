@@ -123,65 +123,87 @@ body {
   font-size: 1rem;
 }
 
-/* ========== BUTTON STYLING ========== */
-.btn-primary {
-  background: linear-gradient(135deg, #ff6600, #ff8533);
-  color: #fff;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  padding: 14px 32px;
-  border-radius: 10px;
+/* ========== UNIVERSAL OUTLINE BUTTON (VISIT & CONTACT ME) ========== */
+.btn-outline {
   display: inline-block;
+  padding: 12px 32px;
+  border: 2px solid #ff6600;
+  border-radius: 10px;
+  color: #ff6600;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
   text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.5px;
+  background: transparent;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-.btn-primary:hover {
-  background: linear-gradient(135deg, #ff8533, #ff6600);
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+.btn-outline:hover {
+  background: #ff6600;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255,102,0,0.25);
 }
 
-.btn-primary:active {
-  transform: translateY(-1px) scale(0.98);
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+.btn-outline:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 @media (max-width: 600px) {
-  .btn-primary {
+  .btn-outline {
     width: 100%;
-    text-align: center;
-    padding: 14px;
-    font-size: 1.1rem;
+    padding: 14px 0;
+    font-size: 1rem;
   }
 }
 
-/* ========== ILLUSTRATION SECTION ========== */
+
+
+/* ========== ILLUSTRATION SECTION (IMAGE LEFT, TEXT RIGHT) ========== */
 .illustration-section {
   padding: 6rem 1rem;
   margin-top: 4rem;
+  text-align: left;
+}
+
+.illustration-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
   text-align: center;
 }
 
+.illustration-section p.section-desc {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Grid tiap card */
 .illustration-grid {
   display: flex;
   flex-direction: column;
-  gap: 6rem;
   align-items: center;
+  gap: 5rem;
 }
 
+/* Card wrapper */
 .illustration-card {
   width: 100%;
   max-width: 1100px;
-  opacity: 0;
-  transform: translateY(50px);
+  background: transparent;
   transition: all 0.8s ease;
-  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(40px);
 }
 
 .illustration-card.show {
@@ -189,6 +211,293 @@ body {
   transform: translateY(0);
 }
 
+/* Layout: gambar kiri, teks kanan */
 .illustration-content {
   display: flex;
-  align-items
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-direction: row;
+}
+
+/* Bagian teks di kanan */
+.illustration-text {
+  width: 45%;
+  text-align: left;
+}
+
+.illustration-text h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.6rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  position: relative;
+}
+
+.illustration-text h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #ff6600;
+  margin-top: 0.4rem;
+  border-radius: 3px;
+}
+
+.illustration-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-top: 0.8rem;
+}
+
+/* Gambar di kiri */
+.illustration-content img {
+  width: 50%;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.illustration-content img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Variasi arah zigzag (bisa dipakai kalau ingin selang-seling) */
+.illustration-card.right .illustration-content {
+  flex-direction: row-reverse;
+}
+
+/* Responsive untuk layar kecil */
+@media (max-width: 900px) {
+  .illustration-content {
+    flex-direction: column;
+    text-align: left;
+    gap: 1.5rem;
+  }
+
+  .illustration-content img,
+  .illustration-text {
+    width: 100%;
+  }
+
+  .illustration-text h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* ========== MY KOMIK SECTION (CENTERED TITLE & TEXT) ========== */
+.comic-section {
+  padding: 6rem 1rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.comic-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.8rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.comic-section p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.comic-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.comic-card {
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: 320px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.comic-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px 16px 0 0;
+}
+
+.comic-body {
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.comic-body h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.4rem;
+}
+
+.comic-body p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ========== FOOTER (FINAL RESPONSIVE & CONSISTENT STYLE) ========== */
+footer {
+  background: #f9f9f9;
+  padding: 4rem 1.5rem 2rem;
+  margin-top: 6rem;
+  border-top: 1px solid #ddd;
+  text-align: left;
+}
+
+.footer-container {
+  display: grid;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-col {
+  text-align: left;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #ff6600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+.footer-col p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #ff6600;
+}
+
+/* ========== SOCIAL ICONS ========== */
+.socials {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.socials a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  color: #555;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Pastikan semua icon image (jika pakai <img>) ukurannya sama */
+.socials a img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Hover effects per platform */
+.socials a:hover {
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+.socials a.instagram:hover { background: #c72c5d; }
+.socials a.webtoon:hover { background: #00b255; }
+.socials a.behance:hover { background: #0d4ecf; }
+.socials a.fiverr:hover { background: #1DBF73; }
+
+/* ========== COPYRIGHT TEXT ========== */
+footer p:last-child {
+  text-align: left;
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #ddd;
+  padding-top: 1.5rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (min-width: 768px) {
+  .footer-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    padding: 2.5rem 1rem;
+    margin-top: 4rem;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.8rem;
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+
+  .socials a {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+
+  footer p:last-child {
+    font-size: 0.85rem;
+    margin-top: 2rem;
+  }
+}
