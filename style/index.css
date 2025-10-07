@@ -171,7 +171,7 @@ body {
 }
 
 .illustration-section h2 {
-  font-size: 2rem;
+  font-size: clamp(1.4rem, 2.5vw, 2rem); /* ✅ fleksibel */
   font-weight: 700;
   color: #222;
   margin-bottom: 1rem;
@@ -180,7 +180,7 @@ body {
 }
 
 .illustration-section p.section-desc {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.8vw, 1rem); /* ✅ fleksibel */
   color: #555;
   max-width: 600px;
   margin: 0 auto 3rem;
@@ -227,7 +227,7 @@ body {
 }
 
 .illustration-text h3 {
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem); /* ✅ fleksibel */
   font-weight: 700;
   color: #222;
   margin-bottom: 0.6rem;
@@ -246,7 +246,7 @@ body {
 }
 
 .illustration-text p {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.8vw, 1rem); /* ✅ fleksibel */
   color: #555;
   line-height: 1.7;
   margin-top: 0.8rem;
@@ -285,29 +285,31 @@ body {
   }
 
   .illustration-text h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 4vw, 1.5rem); /* ✅ fleksibel juga di mobile */
   }
 }
 
 
-/* ========== MY KOMIK SECTION (CENTERED TITLE & TEXT) ========== */
+
+/* ========== MY KOMIK SECTION (CENTERED TITLE & TEXT, ORANGE THEME) ========== */
 .comic-section {
   padding: 6rem 1rem;
   margin-top: 4rem;
   text-align: center;
+  background: #ff6600; /* 🔸 Warna oranye konsisten */
 }
 
 .comic-section h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #222;
+  color: #fff; /* 🔸 Teks putih */
   margin-bottom: 0.8rem;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .comic-section p {
   font-size: 1rem;
-  color: #555;
+  color: #fff; /* 🔸 Teks putih */
   margin-bottom: 2.5rem;
   text-align: center;
 }
@@ -329,6 +331,36 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Badge "Collaboration" di atas card */
+.comic-card.collaboration {
+  position: relative;
+  overflow: hidden;
+}
+
+.collab-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #fff;
+  color: #ff6600;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  letter-spacing: 0.5px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Efek saat hover card */
+.comic-card.collaboration:hover .collab-badge {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
 .comic-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
@@ -343,27 +375,29 @@ body {
 .comic-body {
   padding: 1.2rem;
   text-align: center;
+  background: #ffffff; /* 🔸 Warna oranye seragam dengan section */
 }
 
 .comic-body h3 {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #222;
+  color: #000000; /* 🔸 Teks putih */
   margin-bottom: 0.4rem;
 }
 
 .comic-body p {
   font-size: 0.95rem;
-  color: #555;
+  color: #000000; /* 🔸 Teks putih */
   line-height: 1.5;
 }
 
+
 /* ========== FOOTER (FINAL RESPONSIVE & CONSISTENT STYLE) ========== */
 footer {
-  background: #f9f9f9;
+  background: #ffffff;
   padding: 4rem 1.5rem 2rem;
   margin-top: 6rem;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #e0e0e0;
   text-align: left;
 }
 
@@ -462,7 +496,7 @@ footer p:last-child {
   margin-top: 2.5rem;
   font-size: 0.9rem;
   color: #777;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #d4d4d4;
   padding-top: 1.5rem;
 }
 
@@ -499,5 +533,298 @@ footer p:last-child {
   footer p:last-child {
     font-size: 0.85rem;
     margin-top: 2rem;
+  }
+}
+
+
+/* ========== MOBILE ADJUSTMENTS ========== */
+@media (max-width: 767px) {
+
+  /* ===== HERO SECTION ===== */
+  .hero-bg {
+    height: 30vh;
+    border-radius: 0 0 14px 14px;
+  }
+
+  .profile {
+    margin-top: -50px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+    border-width: 4px;
+  }
+
+  .intro {
+    max-width: 90%;
+    padding: 0 1rem;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro .desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .social-icons {
+    gap: 0.8rem;
+  }
+
+  .social-icons .icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
+
+  /* ===== BUTTON ===== */
+  .btn-outline {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 12px 0;
+  }
+
+/* ===== ILLUSTRATION SECTION ===== */
+.illustration-section {
+  padding: 4rem 1rem;
+  margin-top: 3rem;
+}
+
+/* Judul besar section */
+.illustration-section h2 {
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+/* Deskripsi section */
+.illustration-section p.section-desc {
+  font-size: 0.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Tata letak tiap card */
+.illustration-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: left;
+}
+
+/* Gambar */
+.illustration-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+/* Bagian teks */
+.illustration-text {
+  width: 100%;
+  text-align: left; /* Rata kiri sesuai permintaan */
+}
+
+/* Judul di atas gambar */
+.illustration-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #222;
+  font-weight: 700;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+/* Deskripsi di bawah gambar */
+.illustration-text p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+
+/* ======== MOBILE INTERACTIVE TEXT ANIMATION (ON IMAGE) ======== */
+@media (max-width: 900px) {
+
+  /* Struktur dasar */
+  .illustration-content {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  /* Pastikan gambar tetap tampil penuh */
+  .illustration-content img {
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+    position: relative;
+    z-index: 1; /* Gambar di bawah teks */
+  }
+
+  /* Teks overlay di atas gambar */
+  .illustration-text {
+    position: absolute;
+    inset: 0; /* menutupi seluruh area gambar */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0));
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.5s ease-in-out;
+    border-radius: 12px;
+    z-index: 2; /* Pastikan teks di atas gambar */
+    pointer-events: none; /* Supaya klik tetap mengenai gambar */
+  }
+
+  /* Saat disentuh (atau hover di PC), teks muncul */
+  .illustration-card:active .illustration-text,
+  .illustration-card:hover .illustration-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Judul */
+  .illustration-text h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Deskripsi */
+  .illustration-text p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #f0f0f0;
+  }
+
+  /* Efek redup gambar saat teks muncul */
+  .illustration-card:hover img,
+  .illustration-card:active img {
+    filter: brightness(0.6);
+  }
+}
+
+
+
+
+  /* ===== COMIC SECTION ===== */
+  .comic-section {
+    padding: 4rem 1rem;
+  }
+
+  .comic-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .comic-section p {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .comic-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .comic-card {
+    flex: 1 1 100%;
+    max-width: 90%;
+  }
+
+  /* Badge "Collaboration" di atas card */
+.comic-card.collaboration {
+  position: relative;
+  overflow: hidden;
+}
+
+.collab-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #fff;
+  color: #ff6600;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  letter-spacing: 0.5px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Efek saat hover card */
+.comic-card.collaboration:hover .collab-badge {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
+  .comic-body {
+    padding: 1rem;
+  }
+
+  .comic-body h3 {
+    font-size: 1.2rem;
+  }
+
+  .comic-body p {
+    font-size: 0.9rem;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    padding: 3rem 1rem 1.5rem;
+    margin-top: 4rem;
+    text-align: center;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-col h4 {
+    font-size: 1rem;
+  }
+
+  .footer-col p,
+  .footer-col ul li {
+    font-size: 0.9rem;
+  }
+
+  .socials {
+    justify-content: center;
+  }
+
+  .socials a {
+    width: 38px;
+    height: 38px;
+    font-size: 1.2rem;
+  }
+
+  footer p:last-child {
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
   }
 }
