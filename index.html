@@ -210,4 +210,17 @@
     });
   </script>
 
+  <script>
+  const comicCards = document.querySelectorAll('.comic-card');
+  comicCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Tutup semua card lain dulu
+      comicCards.forEach(c => c !== card && c.classList.remove('active'));
+      // Toggle card aktif
+      card.classList.toggle('active');
+    });
+  });
+</script>
+
+
 </html>

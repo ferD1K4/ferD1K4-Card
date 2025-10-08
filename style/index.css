@@ -126,19 +126,20 @@ body {
 /* ========== UNIVERSAL OUTLINE BUTTON (VISIT & CONTACT ME) ========== */
 .btn-outline {
   display: inline-block;
-  padding: 12px 32px;
+  padding: 14px 40px; /* ✅ sedikit lebih besar untuk PC */
   border: 2px solid #ff6600;
   border-radius: 10px;
   color: #ff6600;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem; /* ✅ sedikit lebih besar agar seimbang */
   text-decoration: none;
   text-align: center;
   letter-spacing: 0.5px;
   background: transparent;
   transition: all 0.3s ease;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  min-width: 140px; /* ✅ menjaga ukuran konsisten antar tombol */
 }
 
 .btn-outline:hover {
@@ -153,13 +154,16 @@ body {
   box-shadow: none;
 }
 
+/* Responsive - versi mobile tetap nyaman */
 @media (max-width: 600px) {
   .btn-outline {
     width: 100%;
     padding: 14px 0;
     font-size: 1rem;
+    min-width: unset; /* ✅ agar fleksibel di layar kecil */
   }
 }
+
 
 
 
@@ -321,14 +325,94 @@ body {
   gap: 1.5rem;
 }
 
+/* ========== CARD KOMIK INTERAKTIF ========== */
 .comic-card {
+  position: relative;
   flex: 1 1 calc(33.333% - 1rem);
   max-width: 320px;
-  background: #fff;
+   background: transparent;
   border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   overflow: hidden;
+  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comic-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.comic-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Overlay gradasi hitam lembut di bawah */
+.comic-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0,0,0,0.2));
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+/* Saat card di klik, overlay muncul */
+.comic-card.active .comic-body {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Teks & tombol di bawah, rapi */
+.comic-body h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.comic-body p {
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+/* Tombol visit */
+.comic-body .btn-outline {
+  border: 2px solid #ff6600;
+  color: #ff6600;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 22px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+}
+
+.comic-body .btn-outline:hover {
+  background: #ff6600;
+  color: #fff;
+}
+
+/* Animasi gambar saat overlay muncul */
+.comic-card.active img {
+  transform: scale(1.05);
+  filter: brightness(0.75);
 }
 
 /* Badge "Collaboration" di atas card */
@@ -361,35 +445,6 @@ body {
 }
 
 
-.comic-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.comic-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 16px 16px 0 0;
-}
-
-.comic-body {
-  padding: 1.2rem;
-  text-align: center;
-  background: #ffffff; /* 🔸 Warna oranye seragam dengan section */
-}
-
-.comic-body h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #000000; /* 🔸 Teks putih */
-  margin-bottom: 0.4rem;
-}
-
-.comic-body p {
-  font-size: 0.95rem;
-  color: #000000; /* 🔸 Teks putih */
-  line-height: 1.5;
-}
 
 
 /* ========== FOOTER (FINAL RESPONSIVE & CONSISTENT STYLE) ========== */
