@@ -260,26 +260,35 @@
 </script>
 
 <script>
-  const track = document.querySelector('.review-track');
-  let currentPosition = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".review-track");
+  const reviews = document.querySelectorAll(".review-item");
+  let index = 0;
 
   function slideReviews() {
-    const items = document.querySelectorAll('.review-item');
-    const itemWidth = items[0].offsetWidth + 24; // lebar + gap
-    const totalWidth = itemWidth * items.length;
+    index++;
+    if (index >= reviews.length) index = 0;
 
-    currentPosition -= itemWidth;
+    // Hitung lebar satu item + jarak antar item (gap)
+    const itemWidth = reviews[0].offsetWidth;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
 
-    if (Math.abs(currentPosition) >= totalWidth - track.offsetWidth) {
-      currentPosition = 0; // reset ke awal
-    }
+    // Geser tepat ke tengah item aktif
+    const offset = (itemWidth + gap) * index;
+    const totalWidth = track.scrollWidth;
+    const containerWidth = track.parentElement.offsetWidth;
 
-    track.style.transform = `translateX(${currentPosition}px)`;
+    // Hitung posisi tengah yang benar
+    const centerOffset = offset - (containerWidth - itemWidth) / 2;
+
+    track.style.transform = `translateX(-${centerOffset}px)`;
   }
 
-  // Auto-slide setiap 3 detik
-  setInterval(slideReviews, 3000);
+  // Jalankan otomatis setiap 4 detik
+  setInterval(slideReviews, 4000);
+});
 </script>
+
 
 
 

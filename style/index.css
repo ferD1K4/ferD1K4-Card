@@ -109,7 +109,6 @@ body {
   object-fit: cover;
   object-position: center;
   border-radius: 0 0 20px 20px;
-  transition: transform 8s ease-in-out;
 }
 
 .hero:hover .hero-bg {
@@ -437,7 +436,7 @@ body {
 
 
 /* ==========================================================
-   🌟 USER REVIEWS AUTO SLIDER (1 utama + next item blur, centered)
+   🌟 USER REVIEWS AUTO SLIDER (Perfectly Centered & Balanced)
 ========================================================== */
 .reviews-section {
   padding: 4rem 1rem;
@@ -458,31 +457,30 @@ body {
 .reviews-slider {
   position: relative;
   width: 100%;
-  max-width: 950px; /* ✅ sedikit lebih besar agar pas */
+  max-width: 760px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 18px;
-  display: flex;
-  justify-content: center; /* ✅ center alignment */
 }
 
 /* Track container */
 .review-track {
   display: flex;
+  flex-wrap: nowrap;
   gap: 1.5rem;
   transition: transform 0.8s ease-in-out;
-  align-items: center;
+  will-change: transform;
 }
 
-/* Tiap item */
+/* Tiap review item */
 .review-item {
-  flex: 0 0 88%; /* ✅ lebih besar sedikit dari sebelumnya */
+  flex: 0 0 100%;
+  max-width: 100%;
   background: #fff;
   border-radius: 16px;
   overflow: hidden;
   border: 2px solid #ff660010;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  margin: 0 auto; /* ✅ memastikan posisi tetap di tengah */
 }
 
 .review-item img {
@@ -498,34 +496,41 @@ body {
   transform: scale(1.03);
 }
 
+/* Efek bayangan di sisi untuk sentuhan profesional */
+.reviews-slider::before,
+.reviews-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+
+
+
 /* Responsif */
 @media (max-width: 1024px) {
-  .review-item {
-    flex: 0 0 90%;
-  }
-  .reviews-slider::after {
-    width: 100px;
+  .reviews-section {
+    padding: 3rem 1rem;
   }
 }
 
 @media (max-width: 768px) {
-  .review-item {
-    flex: 0 0 92%;
-  }
-  .reviews-slider::after {
-    width: 80px;
+  .reviews-section h2 {
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 480px) {
   .reviews-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
-  .review-item {
-    flex: 0 0 95%;
-  }
+  .reviews-slider::before,
   .reviews-slider::after {
-    width: 60px;
+    width: 40px;
   }
 }
 
