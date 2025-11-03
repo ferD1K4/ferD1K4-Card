@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,21 +28,23 @@
       <p>Hello, I’m</p>
       <h1>Fer<span>DIKA</span></h1>
 
-      <!-- Social Icons -->
-      <div class="social-icons">
-        <a href="https://www.instagram.com/dk_gallery17" target="_blank" class="icon instagram">
-          <i class="fab fa-instagram"></i>
-        </a>
+<!-- Social Media Links -->
+<div class="social-icons">
+  <a href="https://www.instagram.com/dk_gallery17" target="_blank" class="social-btn instagram">
+    <img src="aset/instagram.png" alt="Instagram">
+  </a>
 
-        <!-- Fiverr pakai gambar lokal -->
-        <a href="https://www.fiverr.com/ferd1k4?public_mode=true" target="_blank" class="icon fiverr">
-          <img src="aset/w.png" alt="Fiverr">
-        </a>
+  <a href="https://www.fiverr.com/ferd1k4?public_mode=true" target="_blank" class="social-btn fiverr">
+    <img src="aset/Fiverr.png" alt="Fiverr">
+  </a>
 
-        <a href="https://www.behance.net/dikaananda1" target="_blank" class="icon behance">
-          <i class="fab fa-behance"></i>
-        </a>
-      </div>
+  <a href="https://www.behance.net/dikaananda1" target="_blank" class="social-btn behance">
+    <img src="aset/Behance.png" alt="Behance">
+  </a>
+</div>
+
+
+
 
       <p class="desc">
         <strong>I am a freelance artist</strong> with experience in illustration. 
@@ -50,9 +53,16 @@
         Don’t hesitate to get in touch, I’ll make sure to help you realize the project you’re working on.
       </p>
 
-      <a href="https://www.instagram.com/direct/t/102437508016887/" target="_blank" class="btn-outline">
-        Contact me
-      </a>
+<div class="btn-group">
+  <a href="https://www.instagram.com/direct/t/102437508016887/" class="btn-contact">
+    <i class="fa-solid fa-paper-plane"></i> Contact Me
+  </a>
+
+  <a href="https://trakteer.id/1co3wcj3oqbswjj1fu9q/tip" target="_blank" class="btn-support">
+    <i class="fa-solid fa-heart"></i> Support
+  </a>
+</div>
+
 
     </div>
   </header>
@@ -96,6 +106,33 @@
 
   </div>
 </section>
+
+
+<!-- ========== USER REVIEWS SECTION ========== -->
+<section class="reviews-section">
+  <h2>What My Clients Say?</h2>
+
+  <div class="reviews-slider">
+    <div class="review-track">
+      <!-- Ganti src dengan screenshot review kamu -->
+      <div class="review-item">
+        <img src="aset/Rivew/Screenshot 2025-11-03 092901 1.png" alt="Review 1">
+      </div>
+      <div class="review-item">
+        <img src="aset/Rivew/Screenshot 2025-11-03 092901 2.png" alt="Review 2">
+      </div>
+      <div class="review-item">
+        <img src="aset/Rivew/Screenshot 2025-11-03 093002 1.png" alt="Review 3">
+      </div>
+      <div class="review-item">
+        <img src="aset/Rivew/Screenshot 2025-11-03 093002 2.png" alt="Review 4">
+      </div>
+    <div class="review-item">
+        <img src="aset/Rivew/Screenshot 2025-11-03 093047 1.png" alt="Review 5">
+      </div>
+  </div>
+</section>
+
 
 
   <!-- Comic Section -->
@@ -221,6 +258,32 @@
     });
   });
 </script>
+
+<script>
+  const track = document.querySelector('.review-track');
+  let currentPosition = 0;
+
+  function slideReviews() {
+    const items = document.querySelectorAll('.review-item');
+    const itemWidth = items[0].offsetWidth + 24; // lebar + gap
+    const totalWidth = itemWidth * items.length;
+
+    currentPosition -= itemWidth;
+
+    if (Math.abs(currentPosition) >= totalWidth - track.offsetWidth) {
+      currentPosition = 0; // reset ke awal
+    }
+
+    track.style.transform = `translateX(${currentPosition}px)`;
+  }
+
+  // Auto-slide setiap 3 detik
+  setInterval(slideReviews, 3000);
+</script>
+
+
+
+
 
 
 </html>
