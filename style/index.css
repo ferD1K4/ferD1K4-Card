@@ -331,7 +331,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10rem;
+  gap: 6rem;                  /* Jarak card */
 }
 
 /* Card wrapper */
@@ -430,34 +430,36 @@ body {
 
 
 /* ==========================================================
-   🌟 USER REVIEWS AUTO SLIDER (Perfectly Centered & Balanced)
+   🌟 CLIENT REVIEWS — Clean, Modern, Professional
 ========================================================== */
+
 .reviews-section {
   padding: 4rem 1rem;
   background: #ff6600;
   text-align: center;
   overflow: hidden;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .reviews-section h2 {
-  font-size: 1.9rem;
-  font-weight: 700;
+  font-size: 2.1rem;
+  font-weight: 800;
   color: #ffffff;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.5px;
 }
 
-/* Slider wrapper */
+/* Slider container */
 .reviews-slider {
   position: relative;
   width: 100%;
   max-width: 760px;
   margin: 0 auto;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 14px;
 }
 
-/* Track container */
+/* Track (horizontal scroll) */
 .review-track {
   display: flex;
   flex-wrap: nowrap;
@@ -466,31 +468,49 @@ body {
   will-change: transform;
 }
 
-/* Tiap review item */
+/* Each review item */
 .review-item {
   flex: 0 0 100%;
-  max-width: 100%;
-  background: #fff;
-  border-radius: 16px;
+  background: #ffffff;
+  border-radius: 18px;
   overflow: hidden;
-  border: 2px solid #ff660010;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  border: 2px solid #ff660015;
+  padding-bottom: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
+.review-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+}
+
+/* Image (testimonial screenshot / photo) */
 .review-item img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
-  border-radius: 16px;
-  transition: transform 0.3s ease;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
+  transition: transform 0.35s ease;
 }
 
 .review-item:hover img {
   transform: scale(1.03);
 }
 
-/* Efek bayangan di sisi untuk sentuhan profesional */
+/* Review text */
+.review-item p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  padding: 1.2rem 1.5rem 0;
+  line-height: 1.55rem;
+  letter-spacing: 0.2px;
+  text-align: left;
+}
+
+/* Soft gradient fade on left & right */
 .reviews-slider::before,
 .reviews-slider::after {
   content: "";
@@ -498,35 +518,43 @@ body {
   top: 0;
   width: 80px;
   height: 100%;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
 }
 
-
-
-
-/* Responsif */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .reviews-section {
-    padding: 3rem 1rem;
+    padding: 3.5rem 1rem;
   }
 }
 
 @media (max-width: 768px) {
   .reviews-section h2 {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+  }
+
+  .review-item p {
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
   .reviews-section h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
+
   .reviews-slider::before,
   .reviews-slider::after {
-    width: 40px;
+    width: 35px;
+  }
+
+  .review-item p {
+    font-size: 0.9rem;
+    padding: 1rem;
   }
 }
+
 
 
 
